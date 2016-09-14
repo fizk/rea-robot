@@ -32,7 +32,7 @@ const position = (state = INITIAL_STATE.position, action, orientation = INITIAL_
                 return {
                     ...state,
                     y: state.y + 1
-            }
+                }
             }
             else if (orientation == 'EAST') {
                 if (state.x + 1 > size.x) {
@@ -42,7 +42,7 @@ const position = (state = INITIAL_STATE.position, action, orientation = INITIAL_
                 return {
                     ...state,
                     x: state.x + 1
-            }
+                }
             }
             else if (orientation == 'SOUTH') {
                 if (state.y - 1 < 0) {
@@ -52,7 +52,7 @@ const position = (state = INITIAL_STATE.position, action, orientation = INITIAL_
                 return {
                     ...state,
                     y: state.y - 1
-            }
+                }
             }
             else if (orientation == 'WEST') {
                 if (state.x - 1 < 0) {
@@ -62,7 +62,7 @@ const position = (state = INITIAL_STATE.position, action, orientation = INITIAL_
                 return {
                     ...state,
                     x: state.x - 1
-            }
+                }
             }
             break;
         default :
@@ -130,15 +130,15 @@ const placed = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 placed: true,
-            position: {
-            x: action.x,
-                y: action.y
-        },
+                position: {
+                x: action.x,
+                    y: action.y
+            },
             orientation: action.orientation
-    };
-default :
-    return state;
-}
+        };
+        default :
+            return state;
+    }
 };
 
 export const robotReducer = (state = INITIAL_STATE, action) => {
@@ -149,24 +149,24 @@ export const robotReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 orientation: orientationLeft(state.orientation, action)
-    };
-case 'RIGHT':
-    return {
-        ...state,
-        orientation: orientationRight(state.orientation, action)
-};
-case 'SIZE':
-    return {
-        ...state,
-        size: size(state.size, action)
-};
-case 'MOVE':
-    return {
-        ...state,
-        position: position(state.position, action, state.orientation, state.size, state.placed)
-};
-    break;
-default :
-    return state;
-}
+            };
+        case 'RIGHT':
+            return {
+                ...state,
+                orientation: orientationRight(state.orientation, action)
+            };
+        case 'SIZE':
+            return {
+                ...state,
+                size: size(state.size, action)
+            };
+        case 'MOVE':
+            return {
+                ...state,
+                position: position(state.position, action, state.orientation, state.size, state.placed)
+            };
+            break;
+        default :
+            return state;
+    }
 };
