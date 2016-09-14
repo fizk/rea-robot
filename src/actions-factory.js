@@ -4,9 +4,9 @@
 
 "use strict";
 
-import { leftAction, rightAction, moveAction, placeAction } from './actions';
+import { leftAction, rightAction, moveAction, placeAction } from './actions.js';
 
-export const actionFactory = (input) => {
+export const actionsFactory = (input) => {
     let inputString = input.trim();
     let placeArray = inputString.match(/^(PLACE)(\s)*([0-9]+)([,\s]*)([0-9]+)([,\s]*)(EAST|WEST|NORTH|SOUTH)*$/);
 
@@ -23,5 +23,4 @@ export const actionFactory = (input) => {
     } else {
         return {type: 'UNDEFINED_ACTION'}
     }
-
 };
