@@ -4,7 +4,8 @@
   "description": "An Node.js / React application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d dist",
+    "test": "mocha --compilers js:babel-register"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "babel-preset-stage-2": "^6.13.0",
     "babel-register": "^6.14.0",
     "mocha": "^3.0.2",
+    "redux": "^3.6.0",
     "webpack": "^1.13.2"
   }
 }
