@@ -9,14 +9,10 @@ import { createStore } from 'redux';
 import { robotReducer } from './robot-reducer.js';
 import { actionsFactory } from './actions-factory.js';
 
+const consoleReader = readline.createInterface({input: process.stdin, output: process.stdout});
 const store = createStore(robotReducer);
 
-const consoleReader = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-consoleReader.on('line', (input)  => {
+consoleReader.on('line', (input) => {
     let action = actionsFactory(input);
 
     switch (action.type) {
@@ -32,3 +28,5 @@ consoleReader.on('line', (input)  => {
             break;
     }
 });
+
+console.log("Welcome to the REA Robot\nState your command");
