@@ -4,7 +4,7 @@
 
 How to install and run.
 
-Clone the repo and install dependencies.
+Clone the repo and install dependencies (`npm install`) .
 
 The simplest way to run the application is to `cd` to the project's root directory and then run `npm run run`.
 
