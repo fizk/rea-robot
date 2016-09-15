@@ -4,6 +4,8 @@
   "description": "An Node.js / React application",
   "main": "index.js",
   "scripts": {
+    "run": "node dist/index.js",
+    "start": "babel-node src/index.js",
     "build": "babel src -d dist",
     "test": "mocha --compilers js:babel-register"
   },
