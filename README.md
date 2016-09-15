@@ -1,12 +1,21 @@
 # REA Toy Robot Simulator
 
-An Node.js / React application
+**An Node.js / React application**
 
-# Toy Robot Simulator
-===================
+How to install and run.
+
+Clone the repo and install dependencies.
+
+The simplest way to run the application is to `cd` to the project's root directory and then run `npm run run`.
+
+The `package.json` provides a few commands that can be run through the **npm** command.
+
+* `npm run build` Will create a ES5 version of the application and store in `dist` directory.
+* `npm run run` Will run the application from the `dist` directory. This dir contains bablefied code.
+* `npm start` Will run the application from source, this includes babelfying the code first and then run.
+* `npm test` Will run the tests. This will babelfy the code first before running the test through **mocha**.
 
 ## Description
------------
 
 - The application is a simulation of a toy robot moving on a square tabletop,
   of dimensions 5 units x 5 units.
@@ -44,14 +53,12 @@ Create an application that can read in commands of the following form:
 - Provide test data to exercise the application.
 
 ## Constraints
------------
 
 - The toy robot must not fall off the table during movement. This also
   includes the initial placement of the toy robot.
 - Any move that would cause the robot to fall must be ignored.
 
 ## Example Input and Output
-------------------------
 
 ### Example a
 
@@ -86,8 +93,7 @@ Expected output
 
     3,3,NORTH
 
-Deliverables
-------------
+### Deliverables
 
 Please provide your source code, and any test code/data you using in
 developing your solution.
